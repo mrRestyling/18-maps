@@ -95,11 +95,23 @@ func main() {
 		},
 	}
 
-	uniqueUsers := make(map[int64]struct{}, len(users))
+	uniqueUsers := map[int64]struct {
+		Id    int64
+		Name2 string
+	}{
+		1: {Id: 1, Name2: "Vova"},
+		2: {Id: 2, Name2: "Zalupa"},
+	}
 
 	for _, user := range users {
 		if _, ok := uniqueUsers[user.Id]; !ok {
-			uniqueUsers[user.Id] = struct{}{}
+			uniqueUsers[user.Id] = struct {
+				Id    int64
+				Name2 string
+			}{
+				Id:    user.Id,
+				Name2: user.Name,
+			}
 		}
 	}
 
@@ -114,7 +126,11 @@ func main() {
 	}
 	fmt.Println(usersMap)
 	fmt.Println(findInSLice(34, users))
+
+	ss := findInMap(34, usersMap)
 	fmt.Println(findInMap(34, usersMap))
+	fmt.Println(*ss)
+
 }
 
 func findInSLice(id int64, users []User) *User {
@@ -131,6 +147,5 @@ func findInMap(id int64, usersMap map[int64]User) *User {
 	if user, ok := usersMap[id]; ok {
 		return &user
 	}
-
 	return nil
 }
