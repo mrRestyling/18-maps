@@ -100,7 +100,7 @@ func main() {
 		Name2 string
 	}{
 		1: {Id: 1, Name2: "Vova"},
-		2: {Id: 2, Name2: "Zalupa"},
+		2: {Id: 2, Name2: "Sasha"},
 	}
 
 	for _, user := range users {
