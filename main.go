@@ -30,7 +30,7 @@ func main() {
 	// fmt.Printf("len: %d\n\n", len(mapByMakeWithCap))
 
 	//slice by literal
-	mapByLiteral := map[string]int{"Daria": 30, "Egor": 28}
+	mapByLiteral := map[string]int{"Daria": 30, "Egor": 35}
 	fmt.Printf("%T, %#v\n", mapByLiteral, mapByLiteral)
 	fmt.Printf("len: %d\n\n", len(mapByLiteral))
 
